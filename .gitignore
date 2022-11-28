@@ -12,7 +12,7 @@ migrate_working_dir/
 pubspec.lock
 README.md
 .metadata
-
+build
 # IntelliJ related
 *.iml
 *.ipr
