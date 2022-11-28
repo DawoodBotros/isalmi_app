@@ -9,6 +9,9 @@
 .history
 .svn/
 migrate_working_dir/
+pubspec.lock
+README.md
+.metadata
 
 # IntelliJ related
 *.iml
