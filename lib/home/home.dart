@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:isalmi/home/ahadeth/ahdeth.dart';
+import 'package:isalmi/home/ahdeth.dart';
 import 'package:isalmi/home/quran/quran.dart';
 import 'package:isalmi/home/radio/radio.dart';
-import 'package:isalmi/home/sebha/sebha.dart';
+import 'package:isalmi/home/sebha.dart';
 import 'package:isalmi/myTheme.dart';
 
 class HomeScreen extends StatefulWidget {
