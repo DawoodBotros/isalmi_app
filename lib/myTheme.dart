@@ -6,6 +6,9 @@ class MyThemeData {
   static ThemeData ligthTheme = ThemeData(
     scaffoldBackgroundColor: Colors.transparent,
     appBarTheme: AppBarTheme(
+      iconTheme: IconThemeData(
+        color: colorBlack,
+      ),
       backgroundColor: Colors.transparent,
       elevation: 0.0,
       centerTitle: true,
