@@ -13,12 +13,16 @@ class RadioTab extends StatelessWidget {
             "اذاعة القران الكريم ",
             style: Theme.of(context).textTheme.subtitle1,
           ),
-          SizedBox(height: MediaQuery.of(context).size.height * 0.080,),
+          SizedBox(
+            height: MediaQuery.of(context).size.height * 0.080,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: const[
+            children: const [
               ImageIcon(
-                AssetImage("assets/images/icon_next_left.png",),
+                AssetImage(
+                  "assets/images/icon_next_left.png",
+                ),
                 color: Color.fromRGBO(183, 147, 95, 1.0),
               ),
               ImageIcon(

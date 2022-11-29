@@ -35,7 +35,7 @@ class _SebhaTabState extends State<SebhaTab> {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      margin: EdgeInsets.all(15),
+      margin: const EdgeInsets.all(15),
       child: Column(
         children: [
           InkWell(
@@ -66,7 +66,8 @@ class _SebhaTabState extends State<SebhaTab> {
             child: Center(
               child: Text(
                 "$numSebha",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+                style:
+                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
               ),
             ),
           ),
@@ -81,7 +82,8 @@ class _SebhaTabState extends State<SebhaTab> {
             child: FittedBox(
               child: Text(
                 nameSebha,
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+                style:
+                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
               ),
             ),
           )
