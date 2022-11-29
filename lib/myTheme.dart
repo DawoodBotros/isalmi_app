@@ -20,6 +20,7 @@ class MyThemeData {
         color: colorBlack,
       ),
       subtitle1: TextStyle(fontWeight: FontWeight.bold,fontSize: 25),
+      subtitle2: TextStyle(fontSize: 25),
     ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       selectedItemColor: colorBlack,

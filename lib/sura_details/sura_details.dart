@@ -16,7 +16,7 @@ class _SuraDetailsState extends State<SuraDetails> {
   Widget build(BuildContext context) {
     SuraDetailsArgs args =
         ModalRoute.of(context)?.settings.arguments as SuraDetailsArgs;
-    if(ayaat.isEmpty){
+    if (ayaat.isEmpty) {
       loadFile(args.index);
     }
     return Stack(
@@ -31,11 +31,18 @@ class _SuraDetailsState extends State<SuraDetails> {
           ),
           body: ayaat == 0
               ? CircularProgressIndicator()
-              : ListView.builder(
-                  itemCount: ayaat.length,
-                  itemBuilder: (context, index) {
-                    return AyaItem(ayaat[index]);
-                  },
+              : Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(25),
+                    color: Colors.grey.shade400,
+                  ),
+                  margin: EdgeInsets.symmetric(horizontal: 30, vertical: 35),
+                  child: ListView.builder(
+                    itemCount: ayaat.length,
+                    itemBuilder: (context, index) {
+                      return AyaItem(ayaat[index]);
+                    },
+                  ),
                 ),
         ),
       ],
