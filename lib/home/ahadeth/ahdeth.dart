@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:isalmi/hadeth_details/hadeth_details.dart';
 import 'package:isalmi/home/ahadeth/ahadeth_item.dart';
 import 'package:isalmi/myTheme.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AhadethTab extends StatefulWidget {
   @override
@@ -26,7 +27,7 @@ class _AhadethTabState extends State<AhadethTab> {
           thickness: 3,
         ),
         Text(
-          "Ahadeth",
+          AppLocalizations.of(context)!.ahadeth,
           style: Theme.of(context).textTheme.subtitle2,
           textAlign: TextAlign.center,
         ),
@@ -46,9 +47,9 @@ class _AhadethTabState extends State<AhadethTab> {
                   itemCount: Ahadeth.length,
                   itemBuilder: (context, index) {
                     return InkWell(
-                      onTap: (){
-                        Navigator.pushNamed(context, HadethDetails.routeName,arguments:
-                        Ahadeth[index]);
+                      onTap: () {
+                        Navigator.pushNamed(context, HadethDetails.routeName,
+                            arguments: Ahadeth[index]);
                       },
                       child: AhadethItem(Ahadeth[index].title),
                     );
