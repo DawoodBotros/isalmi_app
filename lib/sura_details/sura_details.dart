@@ -40,7 +40,7 @@ class _SuraDetailsState extends State<SuraDetails> {
                   child: ListView.builder(
                     itemCount: ayaat.length,
                     itemBuilder: (context, index) {
-                      return AyaItem(ayaat[index]);
+                      return AyaItem(ayaat[index],index);
                     },
                   ),
                 ),
