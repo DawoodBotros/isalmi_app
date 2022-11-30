@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:isalmi/hadeth_details/hadeth_details.dart';
 import 'package:isalmi/home/home.dart';
 import 'package:isalmi/myTheme.dart';
+import 'package:isalmi/splash_screen.dart';
 import 'package:isalmi/sura_details/sura_details.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -30,8 +31,9 @@ class MyApplication extends StatelessWidget {
       ],
       locale: Locale('ar'),
       debugShowCheckedModeBanner: false,
-      initialRoute: HomeScreen.routeName,
+      initialRoute: SplashScreen.routeName,
       routes: {
+        SplashScreen.routeName:(context)=> SplashScreen(),
         HomeScreen.routeName: (context) => HomeScreen(),
         SuraDetails.routeName: (context) => SuraDetails(),
         HadethDetails.routeName: (context) => HadethDetails(),
