@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:isalmi/myTheme.dart';
+import 'package:provider/provider.dart';
+
+import '../../provider/my_provider.dart';
 
 class RadioTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<MyProvider>(context);
     return Container(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -18,20 +22,22 @@ class RadioTab extends StatelessWidget {
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: const [
+            children:  [
               ImageIcon(
                 AssetImage(
                   "assets/images/icon_next_left.png",
                 ),
-                color: Color.fromRGBO(183, 147, 95, 1.0),
+                color: provider.mode == ThemeMode.light ? MyThemeData.colorGold :MyThemeData.yellowColor,
+
               ),
               ImageIcon(
                 AssetImage("assets/images/icon_play.png"),
-                color: Color.fromRGBO(183, 147, 95, 1.0),
+                color: provider.mode == ThemeMode.light ? MyThemeData.colorGold :MyThemeData.yellowColor,
+
               ),
               ImageIcon(
                 AssetImage("assets/images/icon_next_right.png"),
-                color: Color.fromRGBO(183, 147, 95, 1.0),
+                color: provider.mode == ThemeMode.light ? MyThemeData.colorGold :MyThemeData.yellowColor,
               ),
             ],
           )
