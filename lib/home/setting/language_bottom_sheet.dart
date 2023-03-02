@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:isalmi/myTheme.dart';
 import 'package:isalmi/provider/my_provider.dart';
 import 'package:provider/provider.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class LanguageBottomSheet extends StatelessWidget {
   const LanguageBottomSheet({Key? key}) : super(key: key);
 
@@ -21,7 +21,7 @@ class LanguageBottomSheet extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("English",style: Theme.of(context).textTheme.headline1?.copyWith(
+                Text(AppLocalizations.of(context)!.english,style: Theme.of(context).textTheme.headline1?.copyWith(
                   color:provider.getColor("en"),
                 )),
                 Icon(Icons.done,size: 30,color: provider.getColor("en"),),
@@ -37,7 +37,7 @@ class LanguageBottomSheet extends StatelessWidget {
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text("Arabic",style: Theme.of(context).textTheme.headline1?.copyWith(
+                  Text(AppLocalizations.of(context)!.arabic,style: Theme.of(context).textTheme.headline1?.copyWith(
                       color: provider.getColor("ar"),
                   )),
                   Icon(Icons.done,size: 30,color: provider.getColor("ar"),),

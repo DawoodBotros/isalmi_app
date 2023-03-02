@@ -4,6 +4,7 @@ import 'package:isalmi/home/setting/theme_bottom_sheet.dart';
 import 'package:isalmi/myTheme.dart';
 import 'package:isalmi/provider/my_provider.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Setting extends StatelessWidget {
   const Setting({Key? key}) : super(key: key);
@@ -16,7 +17,7 @@ class Setting extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Text("Language",
+          Text(AppLocalizations.of(context)!.language,
               style: Theme.of(context).textTheme.subtitle1?.copyWith(
                     color: MyThemeData.colorGold,
                   )),
@@ -33,7 +34,7 @@ class Setting extends StatelessWidget {
                   border: Border.all(color: MyThemeData.colorGold),
                   borderRadius: BorderRadius.circular(20)),
               child: Text(
-                pro.languageCode == "en" ? "English" : "Arabic",
+                pro.languageCode == "en" ? AppLocalizations.of(context)!.english : AppLocalizations.of(context)!.arabic,
                 style: Theme.of(context).textTheme.subtitle1,
               ),
             ),
@@ -41,7 +42,7 @@ class Setting extends StatelessWidget {
           SizedBox(
             height: 20,
           ),
-          Text("Theme",
+          Text(AppLocalizations.of(context)!.theme,
               style: Theme.of(context).textTheme.subtitle1?.copyWith(
                     color: MyThemeData.colorGold,
                   )),
@@ -58,7 +59,7 @@ class Setting extends StatelessWidget {
                   border: Border.all(color: MyThemeData.colorGold),
                   borderRadius: BorderRadius.circular(20)),
               child: Text(
-                pro.mode == ThemeMode.light ? "Light" : "Dark",
+                pro.mode == ThemeMode.light ? AppLocalizations.of(context)!.light : AppLocalizations.of(context)!.dark,
                 style: Theme.of(context).textTheme.subtitle1,
               ),
             ),

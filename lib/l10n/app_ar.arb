@@ -6,6 +6,12 @@
     "hadeth": "احاديث",
     "radio" : "راديو",
     "sebha" : "التسبيح",
-    "setting": "الاعدادات"
+    "setting": "الاعدادات",
+    "language" : "اللغة",
+    "arabic" : "عربى",
+    "english" : "انجليزى",
+    "theme" : "وضع",
+    "light": "فاتح",
+    "dark" : "داكن"
 
 }
