@@ -24,7 +24,7 @@ class _RadioItemState extends State<RadioItem> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            "${widget.radios?.name}",
+            "${widget.radios.name}",
             style: Theme.of(context).textTheme.subtitle1,
           ),
           SizedBox(

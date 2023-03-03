@@ -8,6 +8,7 @@ import 'package:isalmi/sura_details/sura_details.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   runApp(
@@ -19,9 +20,12 @@ void main() {
 }
 
 class MyApplication extends StatelessWidget {
+  late MyProvider provider;
+
   @override
   Widget build(BuildContext context) {
-    var provider = Provider.of<MyProvider>(context);
+    provider = Provider.of<MyProvider>(context);
+    initSharedPrefs();
     return MaterialApp(
       localizationsDelegates: const [
         AppLocalizations.delegate, // Add this line
@@ -50,5 +54,17 @@ class MyApplication extends StatelessWidget {
       themeMode: provider.mode,
       darkTheme: MyThemeData.DarkTheme,
     );
+  }
+
+  void initSharedPrefs() async {
+    final prefs = await SharedPreferences.getInstance();
+    String lang = prefs.getString("lang") ?? "en";
+    provider.ChangeLanguage(lang);
+    String? theme = prefs.getString("theme");
+    if (theme == "light") {
+      provider.ChangeTheme(ThemeMode.light);
+    } else if (theme == "dark") {
+      provider.ChangeTheme(ThemeMode.dark);
+    }
   }
 }

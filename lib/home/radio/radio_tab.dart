@@ -5,6 +5,10 @@ import 'package:flutter/material.dart';
 import 'package:isalmi/home/radio/radio.dart';
 import 'package:isalmi/home/radio/radio_model.dart';
 import 'package:http/http.dart' as http;
+import 'package:isalmi/myTheme.dart';
+import 'package:provider/provider.dart';
+
+import '../../provider/my_provider.dart';
 
 class RadioTab extends StatefulWidget {
   State<RadioTab> createState() => _RadioTabState();
@@ -15,6 +19,7 @@ class _RadioTabState extends State<RadioTab> {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<MyProvider>(context);
     var size = MediaQuery.of(context).size;
     return Column(
       children: [
@@ -31,7 +36,7 @@ class _RadioTabState extends State<RadioTab> {
                 var radios = snapshot.data?.radios ?? [];
                 return ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  physics: PageScrollPhysics(),
+                  physics: const PageScrollPhysics(),
                   itemCount: snapshot.data!.radios!.length,
                   itemBuilder: (context, index) {
                     return SizedBox(
@@ -45,7 +50,7 @@ class _RadioTabState extends State<RadioTab> {
               } else if (snapshot.hasError) {
                 return Text("Somthing Erorr");
               } else {
-                return Center(child: const CircularProgressIndicator());
+                return Center(child: CircularProgressIndicator());
               }
             },
           ),
